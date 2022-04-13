@@ -1,3 +1,17 @@
 .home {
     padding-top: 6em;
 }
+
+.audience {
+    padding-right: 2em;
+    text-decoration: none;
+    color: #000;
+}
+
+.audience:hover, .audience-fade:hover {
+    color: #000cf0;
+}
+
+.audience-fade {
+    color: grey;
+}
