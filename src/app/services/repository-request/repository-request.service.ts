@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { environment } from '../../../environments/environment';
 import { Repository } from '../../classes/repository/repository';
 
@@ -23,5 +23,29 @@ export class RepositoryRequestService {
       stargazers_count: string,
       forks_count: string,
     }
+
+    let promise = new Promise((resolve, reject) => {
+
+      let header = new HttpHeaders().set(
+        "Authorization", environment.apiKey
+      );
+
+      this.http.get<ApiResponse>(environment.apiUrl, { headers: header }).toPromise().then((response: any) => {
+
+        this.repository.name = response.name
+        this.repository.description = response.description
+        this.repository.updated_at = response.updated_at
+        this.repository.language = response.language
+        this.repository.stargazers_count = response.stargazers_count
+        this.repository.forks_count = response.forks_count
+
+        resolve(response)
+      },
+        error => {
+
+          reject(error)
+        })
+    })
+    return promise
   }
 }

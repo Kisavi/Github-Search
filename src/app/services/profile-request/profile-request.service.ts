@@ -25,20 +25,20 @@ export class ProfileRequestService {
     }
 
     let promise = new Promise((resolve, reject) => {
-      
+
       let header = new HttpHeaders().set(
         "Authorization", environment.apiKey
       );
-      
-      this.http.get<ApiResponse>(environment.apiUrl,{headers:header}).toPromise().then((response: any) => {
-  
+
+      this.http.get<ApiResponse>(environment.apiUrl, { headers: header }).toPromise().then((response: any) => {
+
         this.profile.avatar_url = response.avatar_url
         this.profile.name = response.name
         this.profile.login = response.login
         this.profile.bio = response.bio
         this.profile.followers = response.followers
         this.profile.following = response.following
-        
+
         console.log(response)
         resolve(response)
       },
@@ -47,7 +47,7 @@ export class ProfileRequestService {
           reject(error)
         })
     })
-    
+
     return promise
   }
 }
