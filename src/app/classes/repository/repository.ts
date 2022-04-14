@@ -1,10 +1,10 @@
 export class Repository {
     constructor(
-        public repositoryName: string,
+        public name: string,
         public description: string,
-        public lastUpdate: Date,
+        public updated_at: Date,
         public language: string,
-        public star: string,
-        public fork: string,
+        public stargazers_count: string,
+        public forks_count: string,
     ){}
 }

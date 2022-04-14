@@ -10,7 +10,18 @@ export class RepositoryRequestService {
 
   repository!: Repository
 
-  constructor(private http: HttpClient) { 
-    
+  constructor(private http: HttpClient) {
+    this.repository = new Repository("", "", new Date, "", "", "")
+  }
+
+  repositoryRequest() {
+    interface ApiResponse {
+      name: string,
+      description: string,
+      updated_at: Date,
+      language: string,
+      stargazers_count: string,
+      forks_count: string,
+    }
   }
 }
