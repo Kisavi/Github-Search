@@ -1,3 +1,4 @@
+import { ProfileRequestService } from './../../services/profile-request/profile-request.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,7 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private _profileRequestService:ProfileRequestService
+  ) { 
+    // this.getProfileInfo()
+  }
+
+  getProfileInfo(){
+    this._profileRequestService.profileRequest()
+  }
 
   ngOnInit(): void {
   }
