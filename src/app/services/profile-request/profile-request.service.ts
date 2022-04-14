@@ -10,5 +10,7 @@ export class ProfileRequestService {
 
   profile!: Profile
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) { 
+this.profile = new Profile("", "", "",0 ,0 );
+  }
 }
