@@ -10,5 +10,5 @@ export class ProfileRequestService {
 
   profile!: Profile
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
 }
