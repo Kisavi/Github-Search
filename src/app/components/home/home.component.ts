@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ProfileRequestService } from 'src/app/services/profile-request/profile-request.service';
 
 @Component({
   selector: 'app-home',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  constructor(private profileService:ProfileRequestService) { }
 
   ngOnInit(): void {
   }
