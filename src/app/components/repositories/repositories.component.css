@@ -1,3 +1,9 @@
+.repositories {
+    padding-top: 6em;
+    padding-bottom: 3em;
+    height: 93vh;
+}
+
 .buttom {
     display: flex;
     justify-content: space-between;
