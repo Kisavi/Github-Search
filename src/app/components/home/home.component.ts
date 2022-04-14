@@ -17,7 +17,6 @@ export class HomeComponent implements OnInit {
     this.profileService.profileRequest()
     console.log(this.profileService.profile)
     this.profile = this.profileService.profile
-    console.log("twat")
     console.log(this.profile)
   }
 

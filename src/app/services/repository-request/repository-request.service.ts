@@ -10,5 +10,7 @@ export class RepositoryRequestService {
 
   repository!: Repository
 
-  constructor() { }
+  constructor(private http: HttpClient) { 
+    
+  }
 }
