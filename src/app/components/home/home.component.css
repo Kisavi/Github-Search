@@ -3,6 +3,10 @@
     height: 93vh;
 }
 
+.card-img-top {
+    border-radius: 50%;
+}
+
 .audience {
     padding-right: 2em;
     text-decoration: none;
