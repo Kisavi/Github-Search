@@ -32,7 +32,12 @@ export class ProfileRequestService {
       
       this.http.get<ApiResponse>(environment.apiUrl,{headers:header}).toPromise().then((response: any) => {
   
-        this.profile = response
+        this.profile.avatar_url = response.avatar_url
+        this.profile.name = response.name
+        this.profile.login = response.login
+        this.profile.bio = response.bio
+        this.profile.followers = response.followers
+        this.profile.following = response.following
         
         console.log(this.profile)
         resolve(response)

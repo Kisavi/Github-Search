@@ -1,3 +1,4 @@
+import { Profile } from './../../classes/profile/profile';
 import { Component, OnInit } from '@angular/core';
 import { ProfileRequestService } from 'src/app/services/profile-request/profile-request.service';
 
@@ -8,9 +9,16 @@ import { ProfileRequestService } from 'src/app/services/profile-request/profile-
 })
 export class HomeComponent implements OnInit {
 
+  profile!:Profile
+
   constructor(private profileService:ProfileRequestService) { }
 
   ngOnInit(): void {
+    this.profileService.profileRequest()
+    console.log(this.profileService.profile)
+    this.profile = this.profileService.profile
+    console.log("twat")
+    console.log(this.profile)
   }
 
 }
