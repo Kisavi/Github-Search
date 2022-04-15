@@ -39,7 +39,7 @@ export class ProfileRequestService {
         this.profile.followers = response.followers
         this.profile.following = response.following
 
-        console.log(response)
+        // console.log(response)
         resolve(response)
       },
         error => {

@@ -14,8 +14,9 @@ export class RepositoriesComponent implements OnInit {
   constructor(private repositoryService:RepositoryRequestService) { }
 
   ngOnInit(): void {
-    this.repositoryService.repositoryRequest
+    this.repositoryService.repositoryRequest()
     this.repository = this.repositoryService.repository
+    // console.log(this.repository);
   }
 
 }

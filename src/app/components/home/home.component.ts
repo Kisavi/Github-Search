@@ -15,9 +15,9 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
     this.profileService.profileRequest()
-    console.log(this.profileService.profile)
+    // console.log(this.profileService.profile)
     this.profile = this.profileService.profile
-    console.log(this.profile)
+    // console.log(this.profile)
   }
 
 }

@@ -6,5 +6,7 @@ export class Repository {
         public language: string,
         public stargazers_count: string,
         public forks_count: string,
+        public stargazers_url: string,
+        public url: string,
     ){}
 }
