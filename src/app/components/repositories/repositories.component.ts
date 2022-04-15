@@ -9,13 +9,14 @@ import { RepositoryRequestService } from 'src/app/services/repository-request/re
 })
 export class RepositoriesComponent implements OnInit {
 
-  repository!:Repository
+  // repository!:Repository
+  repositories!: Repository[]
 
   constructor(private repositoryService:RepositoryRequestService) { }
 
   ngOnInit(): void {
     this.repositoryService.repositoryRequest()
-    this.repository = this.repositoryService.repository
+    this.repositories = this.repositoryService.repositories
     // console.log(this.repository);
   }
 

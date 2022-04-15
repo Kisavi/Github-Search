@@ -8,11 +8,11 @@ import { Repository } from '../../classes/repository/repository';
 })
 export class RepositoryRequestService {
 
-  // repository: Repository[]
-  repository!: Repository
+  repositories: Repository[] = []
+  // repository!: Repository
 
   constructor(private http: HttpClient) {
-    this.repository = new Repository("", "", new Date, "", "", "", "", "")
+    // this.repository = new Repository("", "", new Date, "", "", "", "", "")
   }
 
   repositoryRequest() {
@@ -23,8 +23,7 @@ export class RepositoryRequestService {
       language: string,
       stargazers_count: string,
       forks_count: string,
-      stargazers_url: string,
-      forks_url: string,
+      url: string,
     }
 
     let promise = new Promise((resolve, reject) => {
@@ -32,23 +31,24 @@ export class RepositoryRequestService {
       let header = new HttpHeaders().set(
         "Authorization", environment.apiKey
       );
+      var base = `${environment.apiUrl}Kisavi/repos`;
+      this.http.get<ApiResponse>(base, { headers: header }).toPromise().then((response: any) => {
 
-      this.http.get<ApiResponse>(environment.apiUrl, { headers: header }).toPromise().then((response: any) => {
+        // this.repository = response
 
         for (let i in response) {
+          let repository = new Repository("", "", new Date, "", "", "", "")
           // console.log(response[i].name);
-          this.repository.name = response[i].name
-          // this.repository.name = response.name
-          this.repository.description = response[i].description
-          this.repository.updated_at = response[i].updated_at
-          this.repository.language = response[i].language
-          this.repository.stargazers_count = response[i].stargazers_count
-          this.repository.forks_count = response[i].forks_count
-          this.repository.url = response[i].forks_url
-          this.repository.stargazers_url = response[i].stargazers_url
-          // console.log(this.repository.forks_count )
+          repository.name = response[i].name
+          repository.description = response[i].description
+          repository.updated_at = response[i].updated_at
+          repository.language = response[i].language
+          repository.stargazers_count = response[i].stargazers_count
+          repository.forks_count = response[i].forks_count
+          repository.html_url= response[i].html_url
+          this.repositories.unshift(repository)
         }
-        console.log(response[0]); 
+        console.log(response[0]);
         // this.repository.name = response.name
         // this.repository.description = response.description
         // this.repository.updated_at = response.updated_at

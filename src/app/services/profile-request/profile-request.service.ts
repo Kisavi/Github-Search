@@ -30,7 +30,8 @@ export class ProfileRequestService {
         "Authorization", environment.apiKey
       );
 
-      this.http.get<ApiResponse>(environment.apiUrl, { headers: header }).toPromise().then((response: any) => {
+      var base = `${environment.apiUrl}Kisavi`;
+      this.http.get<ApiResponse>(base, { headers: header }).toPromise().then((response: any) => {
 
         this.profile.avatar_url = response.avatar_url
         this.profile.name = response.name

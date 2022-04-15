@@ -2,20 +2,20 @@
   <div class="container-fluid">
     <div class="row">
       <div class="col-lg-12">
-        <!-- <div *ngFor="let repository of repositories"> -->
+        <div *ngFor="let repository of repositories">
           <div class="card" style="width: 18rem;">
             <div class="card-body">
               <h5 class="card-title"> {{repository.name}}</h5>
               <h6 class="card-title">{{repository.description}}</h6>
-              <p class="card-text">Last updated on {{repository.updated_at | date}}</p>
+              <p class="card-text">Updated on {{repository.updated_at | date}}</p>
               <p class="card-text">{{repository.language}}</p>
               <div class="buttom">
-                <a href={{repository.stargazers_url}} class="">{{repository.stargazers_count}}</a>
-                <a href={{repository.url}} class="">{{repository.forks_count}}</a>
+                <a href={{repository.html_url}} class="">{{repository.stargazers_count}}</a>
+                <a href={{repository.html_url}} class="">{{repository.forks_count}}</a>
               </div>
             </div>
           </div>
-        <!-- </div> -->
+        </div>
       </div>
     </div>
   </div>
