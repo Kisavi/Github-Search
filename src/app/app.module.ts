@@ -9,6 +9,7 @@ import { HomeComponent } from './components/home/home.component';
 import { RepositoriesComponent } from './components/repositories/repositories.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { ErrorPageComponent } from './components/error-page/error-page.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { ErrorPageComponent } from './components/error-page/error-page.component
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
