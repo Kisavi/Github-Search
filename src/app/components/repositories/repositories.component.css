@@ -26,6 +26,16 @@
     text-decoration: none;
 }
 
-.links:hover {
+.links:hover, .words:hover, .icons:hover {
     color: rgb(0, 8, 255);
+}
+
+.words {
+    color: grey;
+    font-size: 0.9em;
+}
+
+.icons {
+    margin-right: 0.5em;
+    color: grey;
 }

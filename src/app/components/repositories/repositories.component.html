@@ -10,8 +10,8 @@
               <p class="card-text">Updated on {{repository.updated_at | date}}</p>
               <p class="card-text">{{repository.language}}</p>
               <div class="buttom">
-                <a href={{repository.html_url}} class="links">{{repository.stargazers_count}}</a>
-                <a href={{repository.html_url}} class="links">{{repository.forks_count}}</a>
+                <a href={{repository.html_url}} class="links"><span class="icons"><fa-icon [icon]="faStar"></fa-icon></span>{{repository.stargazers_count}} <span class="words">stars</span></a>
+                <a href={{repository.html_url}} class="links"><span class="icons"><fa-icon [icon]="faCodeFork"></fa-icon></span>{{repository.forks_count}} <span class="words">forks</span></a>
               </div>
             </div>
           </div>
