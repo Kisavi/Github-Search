@@ -1,21 +1,26 @@
 .home {
-    padding-top: 6em;
+  padding-top: 6em;
+}
+
+.card {
+  margin-left: 1.5em;
 }
 
 .card-img-top {
-    border-radius: 50%;
+  border-radius: 50%;
 }
 
 .audience {
-    padding-right: 2em;
-    text-decoration: none;
-    color: #000;
+  padding-right: 2em;
+  text-decoration: none;
+  color: #000;
 }
 
-.audience:hover, .audience-fade:hover {
-    color: #000cf0;
+.audience:hover,
+.audience-fade:hover {
+  color: #000cf0;
 }
 
 .audience-fade {
-    color: grey;
+  color: grey;
 }
