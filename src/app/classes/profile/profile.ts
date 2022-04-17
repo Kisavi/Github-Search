@@ -6,5 +6,6 @@ export class Profile {
         public bio: string,
         public followers: number,
         public following: number,
+        public html_url: string,
     ) { }
 }

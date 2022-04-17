@@ -18,9 +18,16 @@ export class RepositoriesComponent implements OnInit {
   constructor(private repositoryService: RepositoryRequestService) { }
 
   ngOnInit(): void {
-    this.repositoryService.repositoryRequest()
+    this.repositoryService.repositories = []
+    this.repositoryService.repositoryRequest("Kisavi")
     this.repositories = this.repositoryService.repositories
     // console.log(this.repository);
+  }
+
+  receiveName($event: string) {
+    let githubUserName = $event;
+    this.repositoryService.repositoryRequest(githubUserName)
+    console.log(githubUserName);
   }
   
 }

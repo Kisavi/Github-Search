@@ -1,4 +1,5 @@
 <div class="home">
+    <app-navbar (submittedName)="receiveName($event)"></app-navbar>
     <div class="container-fluid">
         <div class="row">
             <div class="col-lg-3">
@@ -8,8 +9,8 @@
                         <h4 class="card-title">{{profile.name}}</h4>
                         <h5 class="card-title">{{profile.login}}</h5>
                         <p class="card-text">{{profile.bio}}</p>
-                        <a class="audience" href="https://github.com/Kisavi">{{profile.followers}} <span class="audience-fade">Followers</span></a>
-                        <a class="audience" href="https://github.com/Kisavi">{{profile.following}} <span class="audience-fade">Following</span></a>
+                        <a class="audience" href={{profile.html_url}}>{{profile.followers}} <span class="audience-fade">Followers</span></a>
+                        <a class="audience" href={{profile.html_url}}>{{profile.following}} <span class="audience-fade">Following</span></a>
                     </div>
                   </div>
             </div>

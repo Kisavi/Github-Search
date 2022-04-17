@@ -9,15 +9,28 @@ import { ProfileRequestService } from 'src/app/services/profile-request/profile-
 })
 export class HomeComponent implements OnInit {
 
+  // githubUserName = ""
+  // //method 1
+  // receiveName($event: string) {
+  //   this.name = $event;
+  //   console.log(this.name);
+  // }
+
   profile!:Profile
 
   constructor(private profileService:ProfileRequestService) { }
 
   ngOnInit(): void {
-    this.profileService.profileRequest()
+    this.profileService.profileRequest("Kisavi")
     // console.log(this.profileService.profile)
     this.profile = this.profileService.profile
     // console.log(this.profile)
+  }
+
+  receiveName($event: string) {
+    let githubUserName = $event;
+    this.profileService.profileRequest(githubUserName)
+    console.log(githubUserName);
   }
 
 }

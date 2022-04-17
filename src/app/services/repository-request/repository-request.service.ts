@@ -15,7 +15,7 @@ export class RepositoryRequestService {
     // this.repository = new Repository("", "", new Date, "", "", "", "", "")
   }
 
-  repositoryRequest() {
+  repositoryRequest(githubUserName: string) {
     interface ApiResponse {
       name: string,
       description: string,
@@ -31,7 +31,7 @@ export class RepositoryRequestService {
       let header = new HttpHeaders().set(
         "Authorization", environment.apiKey
       );
-      var base = `${environment.apiUrl}Kisavi/repos`;
+      var base = `${environment.apiUrl}${githubUserName}/repos`;
       this.http.get<ApiResponse>(base, { headers: header }).toPromise().then((response: any) => {
 
         // this.repository = response
