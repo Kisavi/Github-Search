@@ -35,6 +35,7 @@ export class RepositoryRequestService {
       this.http.get<ApiResponse>(base, { headers: header }).toPromise().then((response: any) => {
 
         // this.repository = response
+        // this.repositories = []
 
         for (let i in response) {
           let repository = new Repository("", "", new Date, "", "", "", "")
@@ -48,7 +49,8 @@ export class RepositoryRequestService {
           repository.html_url= response[i].html_url
           this.repositories.unshift(repository)
         }
-        console.log(response[0]);
+        // console.log(response[0]);
+        
         // this.repository.name = response.name
         // this.repository.description = response.description
         // this.repository.updated_at = response.updated_at

@@ -60,7 +60,7 @@ export class ProfileRequestService {
         this.profile.following = response.following
         this.profile.html_url = response.html_url
 
-        console.log(response)
+        // console.log(response)
         resolve(response)
       },
         error => {
