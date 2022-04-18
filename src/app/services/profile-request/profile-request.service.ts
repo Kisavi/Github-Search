@@ -27,14 +27,14 @@ export class ProfileRequestService {
 
     let promise = new Promise((resolve, reject) => {
 
-      let header = new HttpHeaders().set(
-        "Authorization", environment.apiKey
-      );
+      // let header = new HttpHeaders().set(
+      //   "Authorization", environment.apiKey
+      // );
 
       // console.log(fName);
-      
-      var base = `${environment.apiUrl}${githubUserName}`;
-      this.http.get<ApiResponse>(base, { headers: header }).toPromise().then((response: any) => {
+      var base = `("https://api.github.com/users/")${githubUserName}`
+      // var base = `${environment.apiUrl}${githubUserName}`;
+      this.http.get<ApiResponse>(base).toPromise().then((response: any) => {
 
         this.profile.avatar_url = response.avatar_url
         this.profile.name = response.name
