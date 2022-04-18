@@ -9,7 +9,7 @@ import { ProfileRequestService } from 'src/app/services/profile-request/profile-
 })
 export class HomeComponent implements OnInit {
 
-  // userInput = "David"
+  userInput = ""
 
   profile!:Profile
 
@@ -25,9 +25,8 @@ export class HomeComponent implements OnInit {
   receiveName($event: string) {
     let githubUserName = $event;
     this.profileService.profileRequest(githubUserName)
-    console.log(githubUserName);
+    // console.log(githubUserName);
+    this.userInput = githubUserName
   }
-
-  // userInput = "David"
 
 }

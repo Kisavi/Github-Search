@@ -7,22 +7,6 @@ import { Profile } from '../../classes/profile/profile';
   providedIn: 'root'
 })
 export class ProfileRequestService {
-  // name: string | undefined;
-//   name = ""
-// //method 1
-// receiveName($event: string) {
-//   this.name = $event;
-//   console.log(this.name);
-// }
-
-// method 2
-// name = "come"
-// receivename($event: string) {
-//   this.name = $event;
-//   console.log(this.name);
-  
-// }
-// 
 
   profile!: Profile
 

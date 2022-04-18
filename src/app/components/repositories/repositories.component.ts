@@ -24,22 +24,13 @@ export class RepositoriesComponent implements OnInit {
     // console.log(this.repository);
   }
 
-//    @Input() githubUsername = ''
-//   //  console.log(githubUserName);
+   @Input() githubUsername = ''
 
-// repoSearch(userName: string){
-//   this.repositoryService.repositories = []
-//   this.repositoryService.repositoryRequest(userName)
-//   this.repositories = this.repositoryService.repositories
-//   console.log(userName);
-// }
-
-  receiveName($event: string) {
-    let githubUserName = $event;
+ngOnChanges(){
     this.repositoryService.repositories = []
-    this.repositoryService.repositoryRequest(githubUserName)
+    this.repositoryService.repositoryRequest(this.githubUsername)
     this.repositories = this.repositoryService.repositories
-    console.log(githubUserName);
-  }
+    // console.log(this.githubUsername);
+}
 
 }

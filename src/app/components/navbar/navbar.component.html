@@ -3,14 +3,7 @@
       <span class="navbar-brand mb-0 h1">GITHUB SEARCH</span>
       <form class="d-flex">
         <input #userInput (keyup.enter)="searchValue(userInput.value)" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <!-- <button (click)="receiveName()" class="btn btn-outline-success" type="button">Search</button> -->
       </form>
-
-      <!-- method 2 -->
-      <!-- <form (ngSubmit)="getInput()" class="d-flex">
-        <input [(ngModel)]="name"type="text" class="form-control me-2" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
-      </form> -->
 
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
