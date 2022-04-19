@@ -25,11 +25,7 @@ export class RepositoryRequestService {
 
     let promise = new Promise((resolve, reject) => {
 
-      // let header = new HttpHeaders().set(
-      //   "Authorization", environment.apiKey
-      // );
-      var base = `("https://api.github.com/users/")${githubUserName}/repos`
-      // var base = `${environment.apiUrl}${githubUserName}/repos`;
+      var base = `${environment.apiUrl}${githubUserName}/repos`;
       this.http.get<ApiResponse>(base).toPromise().then((response: any) => {
 
         for (let i in response) {
